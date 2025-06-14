@@ -23,7 +23,6 @@ app.post('/api/scrape', async (req, res) => {
 
     const hostname = new URL(url).hostname;
 
-    // === NPR Specific Scraping ===
     if (hostname.includes('npr.org')) {
       $('article.story-wrap, article.has-image, article.item').each((i, element) => {
         const title = $(element).find('h2.title, h3.title,').text().trim();
